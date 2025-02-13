@@ -7,9 +7,11 @@ module.exports = {
     'eslint:recommended',
     'plugin:vue/vue3-recommended',
     '@vue/eslint-config-typescript',
-    '@vue/eslint-config-prettier',
+    'prettier',
   ],
   rules: {
     'vue/multi-word-component-names': 'off',
+    'vue/no-unused-vars': 'warn',
+    '@typescript-eslint/no-unused-vars': 'warn',
   },
 };
