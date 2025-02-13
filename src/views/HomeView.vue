@@ -7,6 +7,6 @@
 
 <script setup lang="ts">
 const startGame = () => {
-  console.log("Spiel gestartet!");
-};
+  console.log('Spiel gestartet!')
+}
 </script>
