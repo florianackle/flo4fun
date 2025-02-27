@@ -1,12 +1,35 @@
+<script setup lang="ts">
+import CustomCard from '@/components/CustomCard.vue'
+</script>
+
 <template>
-  <v-container>
-    <h1>Willkommen bei Flo4Fun!</h1>
-    <v-btn color="primary" @click="startGame">Spiel starten</v-btn>
-  </v-container>
+  <!-- Global container using theme colors -->
+  <div
+    class="flex flex-col items-center justify-center min-h-screen text-center p-6 bg-theme text-theme transition-colors space-y-6"
+  >
+    <!-- Wrap HomeView content inside the CustomCard -->
+    <CustomCard>
+      <h1 class="text-4xl font-extrabold text-secondary mb-4 animate-bounce">
+        Willkommen bei Flo4Fun! 🎉
+      </h1>
+
+      <ul class="list-none text-lg space-y-2">
+        <li>🕹️ Spiele <span class="font-bold text-secondary">Who is that Pokémon?</span></li>
+        <li>💡 Entdecke <span class="font-bold text-secondary">Chuck Norris Witze</span></li>
+        <li>
+          🎮 Erstelle deine eigene
+          <span class="font-bold text-secondary">Wunschliste</span> für Games
+        </li>
+      </ul>
+
+      <h2 class="text-2xl font-semibold mt-6">Have fun! 🚀</h2>
+    </CustomCard>
+  </div>
 </template>
 
-<script setup lang="ts">
-const startGame = () => {
-  console.log('Spiel gestartet!')
+<style scoped>
+h1 {
+  /* Bounce animation for the main title */
+  animation: bounce 1.5s infinite;
 }
-</script>
+</style>
