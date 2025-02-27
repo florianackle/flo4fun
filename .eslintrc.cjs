@@ -13,5 +13,7 @@ module.exports = {
     'vue/multi-word-component-names': 'off',
     'vue/no-unused-vars': 'warn',
     '@typescript-eslint/no-unused-vars': 'warn',
+    'no-console': 'warn',
+    'camelcase': 'error',
   },
 };
