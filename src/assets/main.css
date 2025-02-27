@@ -1,0 +1,37 @@
+@import "tailwindcss";
+@import "./colors.css";
+
+@layer base {
+    html {
+        /* Global theme: use primary values by default */
+        --background: var(--bg-primary);
+        --text-color: var(--text-primary);
+    }
+}
+
+@layer utilities {
+    .bg-theme {
+        background-color: var(--background);
+    }
+    .text-theme {
+        color: var(--text-color);
+    }
+    .bg-primary {
+        background-color: var(--bg-primary);
+    }
+    .bg-secondary {
+        background-color: var(--bg-secondary);
+    }
+    .bg-third {
+        background-color: var(--bg-third);
+    }
+    .text-primary {
+        color: var(--text-primary);
+    }
+    .text-secondary {
+        color: var(--text-secondary);
+    }
+    .text-third {
+        color: var(--text-third);
+    }
+}

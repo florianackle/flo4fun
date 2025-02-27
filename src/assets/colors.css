@@ -1,0 +1,27 @@
+/* colors.css */
+
+/* Dark Mode (default) */
+:root {
+    /* Background colors for dark mode using Tailwind purple with larger gaps */
+    --bg-primary: #581c87;  /* purple-900 */
+    --bg-secondary: #9333ea; /* purple-600 */
+    --bg-third: #d8b4fe;     /* purple-300 */
+
+    /* Text colors for dark mode */
+    --text-primary: #faf5ff;  /* purple-50 */
+    --text-secondary: #f3e8ff; /* purple-100 */
+    --text-third: #e9d5ff;     /* purple-200 */
+}
+
+/* Light Mode overrides */
+html.light {
+    /* Background colors for light mode using Tailwind purple with larger gaps */
+    --bg-primary: #faf5ff;  /* purple-50 */
+    --bg-secondary: #d8b4fe; /* purple-300 */
+    --bg-third: #9333ea;     /* purple-600 */
+
+    /* Text colors for light mode */
+    --text-primary: #581c87;  /* purple-900 */
+    --text-secondary: #6b21a8; /* purple-800 */
+    --text-third: #7e22ce;     /* purple-700 */
+}
