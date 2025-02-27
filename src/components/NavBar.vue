@@ -64,7 +64,7 @@ const themeStore = useThemeStore()
         >
           <button
             @click="themeStore.toggleDarkMode"
-            class="p-2 bg-primary text-white hover:bg-third rounded-md transition-all"
+            class="p-2 bg-primary text-theme hover:bg-third hover:text-theme rounded-md transition-all"
           >
             {{ themeStore.isDark ? '🌞 Light Mode' : '🌙 Dark Mode' }}
           </button>
@@ -91,7 +91,7 @@ const themeStore = useThemeStore()
         <!-- Dark/Light mode toggle button for mobile -->
         <button
           @click="themeStore.toggleDarkMode"
-          class="block w-full text-left rounded-md px-3 py-2 text-base font-medium text-primary hover:bg-third hover:text-secondary"
+          class="block w-full text-left rounded-md px-3 py-2 text-base font-medium text-theme hover:bg-third hover:text-theme"
         >
           {{ themeStore.isDark ? '🌞 Light Mode' : '🌙 Dark Mode' }}
         </button>
