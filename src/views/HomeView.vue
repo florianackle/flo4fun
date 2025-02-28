@@ -1,13 +1,18 @@
 <script setup lang="ts">
 import CustomCard from '@/components/CustomCard.vue'
+import { toast } from 'vue3-toastify'
+
+const showEasterEgg = () => {
+  toast('You found the easter egg! 🥚', {
+    position: 'bottom-center',
+  })
+}
 </script>
 
 <template>
-  <!-- Global container using theme colors -->
   <div
     class="flex flex-col items-center justify-center min-h-screen text-center p-6 bg-theme text-theme transition-colors space-y-6"
   >
-    <!-- Wrap HomeView content inside the CustomCard -->
     <CustomCard>
       <h1 class="text-4xl font-extrabold text-secondary mb-4 animate-bounce">
         Willkommen bei Flo4Fun! 🎉
@@ -22,14 +27,15 @@ import CustomCard from '@/components/CustomCard.vue'
         </li>
       </ul>
 
-      <h2 class="text-2xl font-semibold mt-6">Have fun! 🚀</h2>
+      <h2 @click="showEasterEgg" class="text-2xl font-semibold mt-6 cursor-pointer">
+        Have fun! 🚀
+      </h2>
     </CustomCard>
   </div>
 </template>
 
 <style scoped>
 h1 {
-  /* Bounce animation for the main title */
   animation: bounce 1.5s infinite;
 }
 </style>
