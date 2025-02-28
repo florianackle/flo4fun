@@ -32,7 +32,7 @@ onMounted(() => {
         <button
           v-for="option in options"
           :key="option"
-          class="px-4 py-2 rounded bg-secondary text-primary hover:bg-third hover:text-primary"
+          class="px-4 py-2 rounded bg-third text-primary hover:bg-third hover:text-primary"
           @click="checkAnswer(option)"
         >
           {{ option }}
