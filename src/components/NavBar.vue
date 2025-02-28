@@ -88,13 +88,6 @@ const themeStore = useThemeStore()
         >
           {{ item.name }}
         </DisclosureButton>
-        <!-- Dark/Light mode toggle button for mobile -->
-        <button
-          @click="themeStore.toggleDarkMode"
-          class="block w-full text-left rounded-md px-3 py-2 text-base font-medium text-theme hover:bg-third hover:text-theme"
-        >
-          {{ themeStore.isDark ? '🌞 Light Mode' : '🌙 Dark Mode' }}
-        </button>
       </div>
     </DisclosurePanel>
   </Disclosure>
