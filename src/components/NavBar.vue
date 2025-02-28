@@ -36,7 +36,7 @@ const themeStore = useThemeStore()
           <div class="flex shrink-0 items-center">
             <router-link to="/">
               <!-- Logo image linking to home -->
-              <img class="h-8 w-auto" src="/public/favicon.ico" alt="Logo" />
+              <img class="h-8 w-auto" src="/src/assets/favicon.ico" alt="Logo" />
             </router-link>
           </div>
           <!-- Navigation buttons (visible on sm and up) -->
