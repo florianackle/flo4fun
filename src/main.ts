@@ -13,5 +13,6 @@ app.use(createPinia())
 app.use(Vue3Toastify, {
   autoClose: 3000,
   theme: 'auto',
+  position: 'bottom-center',
 } as ToastContainerOptions)
 app.mount('#app')
