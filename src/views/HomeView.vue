@@ -3,9 +3,7 @@ import CustomCard from '@/components/CustomCard.vue'
 import { toast } from 'vue3-toastify'
 
 const showEasterEgg = () => {
-  toast('You found the easter egg! 🥚', {
-    position: 'bottom-center',
-  })
+  toast('You found the easter egg! 🥚', {})
 }
 </script>
 
