@@ -14,9 +14,11 @@ export function usePokemonQuiz() {
   const pokemonImage = ref('')
   const pokemonNameDe = ref('') // Stores the German name
   const options = ref<string[]>([]) // Stores answer options
+  const loading = ref(false) // Loading indicator
 
   // Load a new Pokémon
   async function loadNewPokemon() {
+    loading.value = true
     revealed.value = false
     try {
       // 1) Get a random Pokémon ID
@@ -36,6 +38,8 @@ export function usePokemonQuiz() {
     } catch (error) {
       toast('Fehler beim laden des Pokémon 😢 ' + error, { type: 'error' })
       console.error(error)
+    } finally {
+      loading.value = false
     }
   }
 
@@ -78,6 +82,7 @@ export function usePokemonQuiz() {
     revealed,
     pokemonImage,
     options,
+    loading,
     loadNewPokemon,
     checkAnswer,
   }
