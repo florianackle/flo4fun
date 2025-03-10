@@ -2,7 +2,7 @@
 import { onMounted } from 'vue'
 import CustomCard from '@/components/CustomCard.vue'
 import { usePokemonQuiz } from '@/composables/usePokemonQuiz'
-import { VueSpinnerOval } from 'vue3-spinners'
+import { VueSpinnerPuff } from 'vue3-spinners'
 
 // Extract quiz logic from the composable
 const { revealed, pokemonImage, options, loading, loadNewPokemon, checkAnswer } = usePokemonQuiz()
@@ -21,7 +21,7 @@ onMounted(() => {
       <!-- Pokémon image: show spinner if loading - else show image -->
       <div class="w-64 h-64 flex items-center justify-center mb-4">
         <template v-if="loading">
-          <VueSpinnerOval color="#000" size="20px" />
+          <VueSpinnerPuff color="#000" size="150px" />
         </template>
         <template v-else>
           <img
@@ -36,7 +36,7 @@ onMounted(() => {
       <!-- Answer options: show spinner if loading - else show options -->
       <div class="flex flex-wrap gap-4 justify-center mb-4">
         <template v-if="loading">
-          <VueSpinnerOval color="#000" size="20px" />
+          <VueSpinnerPuff color="#000" size="25px" />
         </template>
         <template v-else>
           <button
