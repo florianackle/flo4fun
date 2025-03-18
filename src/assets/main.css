@@ -6,6 +6,7 @@
         /* Global theme: use primary values by default */
         --background: var(--bg-primary);
         --text-color: var(--text-primary);
+        overflow: hidden;
     }
 }
 
