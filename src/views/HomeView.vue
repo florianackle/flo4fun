@@ -9,7 +9,7 @@ const showEasterEgg = () => {
 
 <template>
   <div
-    class="flex flex-col items-center justify-center min-h-screen text-center p-6 bg-theme text-theme transition-colors space-y-6"
+    class="flex flex-col items-center justify-center min-h-[calc(100vh-8rem)] text-center p-6 bg-theme text-theme transition-colors space-y-6"
   >
     <CustomCard>
       <h1 class="text-4xl font-extrabold text-secondary mb-4 animate-bounce">
