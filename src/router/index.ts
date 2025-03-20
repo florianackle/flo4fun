@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import PokemonView from '@/views/PokemonView.vue'
+import ChuckView from '@/views/ChuckView.vue'
 
 const routes = [
   {
@@ -12,6 +13,11 @@ const routes = [
     path: '/pokemon',
     name: 'PokemonView',
     component: PokemonView,
+  },
+  {
+    path: '/chuck',
+    name: 'ChuckView',
+    component: ChuckView,
   },
 ]
 
