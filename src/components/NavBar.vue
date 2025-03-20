@@ -48,8 +48,8 @@ const themeStore = useThemeStore()
                 :to="item.href"
                 :class="
                   route.path === item.href
-                    ? 'bg-third text-primary rounded-md px-3 py-2 text-sm font-medium'
-                    : 'text-primary hover:bg-third hover:text-secondary rounded-md px-3 py-2 text-sm font-medium'
+                    ? 'bg-third text-white rounded-md px-3 py-2 text-sm font-medium'
+                    : 'text-white hover:bg-third hover:text-secondary rounded-md px-3 py-2 text-sm font-medium'
                 "
               >
                 {{ item.name }}
@@ -82,8 +82,8 @@ const themeStore = useThemeStore()
           :href="item.href"
           :class="
             route.path === item.href
-              ? 'bg-third text-primary block rounded-md px-3 py-2 text-base font-medium'
-              : 'text-primary hover:bg-third hover:text-secondary block rounded-md px-3 py-2 text-base font-medium'
+              ? 'bg-third text-white block rounded-md px-3 py-2 text-base font-medium'
+              : 'text-white hover:bg-third hover:text-secondary block rounded-md px-3 py-2 text-base font-medium'
           "
         >
           {{ item.name }}
