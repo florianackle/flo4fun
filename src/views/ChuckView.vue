@@ -5,7 +5,7 @@ import { VueSpinnerPuff } from 'vue3-spinners'
 import { useChuckNorris } from '@/composables/useChuckNorris'
 
 // Extract the joke logic from the composable
-const { joke, loading, loadJoke } = useChuckNorris()
+const { joke, iconUrl, loading, loadJoke } = useChuckNorris()
 
 // Load a joke when the component is mounted
 onMounted(() => {
@@ -17,6 +17,12 @@ onMounted(() => {
   <CustomCard>
     <div class="flex flex-col items-center justify-center text-center">
       <h2 class="text-3xl font-bold mb-4">Chuck Norris Joke</h2>
+
+      <div class="mb-4">
+        <template v-if="iconUrl && !loading">
+          <img :src="iconUrl" alt="Chuck Norris Icon" class="w-14 h-auto mx-auto" />
+        </template>
+      </div>
 
       <div class="w-full flex items-center justify-center mb-4">
         <template v-if="loading">

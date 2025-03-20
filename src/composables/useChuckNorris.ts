@@ -5,6 +5,7 @@ import { getRandomChuckJoke, type ChuckJokeData } from '@/services/chuckService'
 export function useChuckNorris() {
   // State variables
   const joke = ref('')
+  const iconUrl = ref('')
   const loading = ref(false)
 
   // Load a new joke
@@ -13,6 +14,7 @@ export function useChuckNorris() {
     try {
       const data: ChuckJokeData = await getRandomChuckJoke()
       joke.value = data.value
+      iconUrl.value = data.icon_url
     } catch (error) {
       toast('Error loading joke 😢 ' + error, { type: 'error' })
       console.error(error)
@@ -23,6 +25,7 @@ export function useChuckNorris() {
 
   return {
     joke,
+    iconUrl,
     loading,
     loadJoke,
   }

@@ -5,6 +5,7 @@ const chuckApiClient = createApiClient('https://api.chucknorris.io')
 
 export interface ChuckJokeData {
   value: string
+  icon_url: string
 }
 
 /**
