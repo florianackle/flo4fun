@@ -73,8 +73,10 @@ export function usePokemonQuiz() {
     if (answer === pokemonNameDe.value) {
       toast(`Richtig! Es ist ${answer} 🎉`, { type: 'success' })
       revealed.value = true
+      return true
     } else {
       toast('Leider falsch 😢 Versuche es erneut!', { type: 'error' })
+      return false
     }
   }
 

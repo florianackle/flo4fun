@@ -1,11 +1,34 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import CustomCard from '@/components/CustomCard.vue'
 import { usePokemonQuiz } from '@/composables/usePokemonQuiz'
 import { VueSpinnerPuff } from 'vue3-spinners'
 
 // Extract quiz logic from the composable
-const { revealed, pokemonImage, options, loading, loadNewPokemon, checkAnswer } = usePokemonQuiz()
+const {
+  revealed,
+  pokemonImage,
+  options,
+  loading,
+  loadNewPokemon,
+  checkAnswer: check,
+} = usePokemonQuiz()
+
+// Answer score
+const score = ref(0)
+const totalQuestions = ref(0)
+
+const scorePercent = computed(() => {
+  if (totalQuestions.value === 0) return '0%'
+  return ((score.value / totalQuestions.value) * 100).toFixed(0) + '%'
+})
+
+function checkAnswer(option: string) {
+  totalQuestions.value++
+  if (check(option)) {
+    score.value++
+  }
+}
 
 // Load a Pokémon when the component is mounted
 onMounted(() => {
@@ -17,6 +40,10 @@ onMounted(() => {
   <CustomCard>
     <div class="flex flex-col items-center justify-center text-center">
       <h2 class="text-3xl font-bold mb-4">Who is that Pokémon?</h2>
+
+      <p class="mb-2 text-sm">
+        Punktzahl: {{ score }} von {{ totalQuestions }} ({{ scorePercent }})
+      </p>
 
       <!-- Pokémon image: show spinner if loading - else show image -->
       <div class="w-64 h-64 flex items-center justify-center mb-4">
