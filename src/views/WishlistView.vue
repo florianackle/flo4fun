@@ -65,7 +65,13 @@ function removeGame(index: number) {
         </div>
       </div>
 
-      <AddGameModal v-if="showModal" @close="showModal = false" @save="addGame" />
+      <AddGameModal
+        v-if="showModal"
+        @close="showModal = false"
+        @save="addGame"
+        defaultName="Mario Kart"
+        defaultPlatform="Switch"
+      />
     </div>
   </CustomCard>
 </template>

@@ -1,14 +1,33 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
+
+const props = defineProps<{
+  defaultName?: string
+  defaultPlatform?: string
+}>()
 
 const emit = defineEmits<{
   (e: 'save', game: { name: string; platform: string }): void
   (e: 'close'): void
 }>()
 
-const gameName = ref('')
-const platform = ref('')
+const gameName = ref(props.defaultName || '')
+const platform = ref(props.defaultPlatform || '')
 const error = ref('')
+
+// Reset values if props change
+watch(
+  () => props.defaultName,
+  (newVal) => {
+    gameName.value = newVal || ''
+  }
+)
+watch(
+  () => props.defaultPlatform,
+  (newVal) => {
+    platform.value = newVal || ''
+  }
+)
 
 function saveGame() {
   if (!gameName.value.trim() || !platform.value.trim()) {
