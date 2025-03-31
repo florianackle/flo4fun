@@ -1,11 +1,14 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import CustomCard from '@/components/CustomCard.vue'
 import AddGameModal from '@/components/AddGameModal.vue'
 import { useWishlistStore } from '@/store/wishlist'
 
 const wishlistStore = useWishlistStore()
 const showModal = ref(false)
+
+// Get gameCount in wishlist
+const gameCount = computed(() => wishlistStore.items.length)
 
 onMounted(() => {
   wishlistStore.loadFromStorage()
@@ -25,6 +28,7 @@ function removeGame(index: number) {
   <CustomCard>
     <div class="flex flex-col gap-6 text-theme">
       <h2 class="text-3xl font-bold text-primary">🕹️ Meine Wishlist</h2>
+      <p class="text-sm">Anzahl gespeicherter Spiele: {{ gameCount }}</p>
 
       <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6 w-full">
         <ul
