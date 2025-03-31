@@ -14,7 +14,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <CustomCard>
+  <CustomCard maxWidth="34rem" padding="2rem">
     <div class="flex flex-col items-center justify-center text-center">
       <h2 class="text-3xl font-bold mb-4">Chuck Norris Joke</h2>
 
