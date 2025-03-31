@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const props = defineProps<{
+defineProps<{
   backgroundColor?: string
   maxWidth?: string
   padding?: string
